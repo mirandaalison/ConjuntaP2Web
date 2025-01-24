@@ -35,6 +35,7 @@ function mostrarLibrosReservados() {
 function buscarLibro() {
     let busqueda = document.getElementById("campoBusqueda").value.toLowerCase();
     let librosFiltrados = libros.filter(function(libro) {
+        return libro.titulo.toLowerCase().includes(busqueda);  
         return libro.titulo.toLowerCase().includes(busqueda) || 
             libro.autor.toLowerCase().includes(busqueda) || 
             libro.genero.toLowerCase().includes(busqueda);
