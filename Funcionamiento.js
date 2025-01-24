@@ -1,7 +1,20 @@
 var libros = [
-    { id: 1, titulo: "Random 1", autor: "Juan Perez", genero: "Educativo" },
-    { id: 2, titulo: "Random 2", autor: "Juan Perez", genero: "Horror" },
-    { id: 3, titulo: "Random 3", autor: "Juan Perez", genero: "Horror" },
-    { id: 4, titulo: "Random 4", autor: "Juan Perez", genero: "Horror" },
-    { id: 5, titulo: "Random 5", autor: "Juan Perez", genero: "Horror" },
-]
+    { id: 1, titulo: "La NieblA", autor: "Stephen King", genero: "Horror" },
+    { id: 2, titulo: "Mito de Sisifo", autor: "Albert Camus", genero: "Filosofia" },
+    { id: 3, titulo: "Yo robot", autor: "Issac Asimov", genero: "Ficcion" }
+];
+
+var reservados = [];
+
+function mostrarLibrosDisponibles() {
+    var contenido = ""; 
+    for (var i = 0; i < libros.length; i++) {
+        contenido += `
+            <li>
+                <span><strong>${libros[i].titulo}</strong> por ${libros[i].autor} (${libros[i].genero})</span>
+                <button onclick="reservarLibro(${libros[i].id})">Reservar</button>
+            </li>
+        `;
+    }
+    document.getElementById("listaLibrosDisponibles").innerHTML = contenido; 
+}
