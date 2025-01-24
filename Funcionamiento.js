@@ -18,3 +18,28 @@ function mostrarLibrosDisponibles() {
     }
     document.getElementById("listaLibrosDisponibles").innerHTML = contenido; 
 }
+
+function mostrarLibrosReservados() {
+    var contenido = ""; 
+    for (var i = 0; i < reservados.length; i++) {
+        contenido += `
+            <li>
+                <span><strong>${reservados[i].titulo}</strong> por ${reservados[i].autor}</span>
+                <button onclick="devolverLibro(${reservados[i].id})">Devolver</button>
+            </li>
+        `;
+    }
+    document.getElementById("listaLibrosReservados").innerHTML = contenido;
+}
+
+function reservarLibro(id) {
+}
+
+function devolverLibro(id) {
+}
+
+function mostrarNotificacion(mensaje) {
+}
+
+mostrarLibrosDisponibles();
+mostrarLibrosReservados();
