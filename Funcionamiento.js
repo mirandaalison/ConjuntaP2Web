@@ -59,6 +59,13 @@ function devolverLibro(id) {
 }
 
 function mostrarNotificacion(mensaje) {
+    var notificacion = document.getElementById("notificaciones");
+    notificacion.innerHTML = mensaje;
+    notificacion.style.display = "block";
+
+    setTimeout(function () {
+        notificacion.style.display = "none";
+    }, 5000);
 }
 
 mostrarLibrosDisponibles();
