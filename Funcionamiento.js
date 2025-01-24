@@ -36,8 +36,8 @@ function buscarLibro() {
     let busqueda = document.getElementById("campoBusqueda").value.toLowerCase();
     let librosFiltrados = libros.filter(function(libro) {
         return libro.titulo.toLowerCase().includes(busqueda) || 
-               libro.autor.toLowerCase().includes(busqueda) || 
-               libro.genero.toLowerCase().includes(busqueda);
+            libro.autor.toLowerCase().includes(busqueda) || 
+            libro.genero.toLowerCase().includes(busqueda);
     });
     mostrarLibrosDisponibles(librosFiltrados);
 }
@@ -73,9 +73,8 @@ function mostrarNotificacion(mensaje) {
     var notificacion = document.getElementById("notificaciones");
     notificacion.innerHTML = mensaje;
     notificacion.style.display = "block";
-
     setTimeout(function () {
-        notificacion.style.display = "none";
+        notificacion.style.display = "none"; 
     }, 5000);
 }
 
