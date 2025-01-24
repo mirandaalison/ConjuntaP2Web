@@ -32,6 +32,17 @@ function mostrarLibrosReservados() {
     document.getElementById("listaLibrosReservados").innerHTML = contenido;
 }
 
+function buscarLibro() {
+    let busqueda = document.getElementById("campoBusqueda").value.toLowerCase();
+    let librosFiltrados = libros.filter(function(libro) {
+        return libro.titulo.toLowerCase().includes(busqueda) || 
+               libro.autor.toLowerCase().includes(busqueda) || 
+               libro.genero.toLowerCase().includes(busqueda);
+    });
+    mostrarLibrosDisponibles(librosFiltrados);
+}
+
+
 function reservarLibro(id) {
     for (var i = 0; i < libros.length; i++) {
         if (libros[i].id === id) {
