@@ -33,9 +33,29 @@ function mostrarLibrosReservados() {
 }
 
 function reservarLibro(id) {
+    for (var i = 0; i < libros.length; i++) {
+        if (libros[i].id === id) {
+            reservados.push(libros[i]); 
+            libros.splice(i, 1);
+            mostrarLibrosDisponibles();
+            mostrarLibrosReservados();
+            mostrarNotificacion("Has reservado el libro '" + reservados[reservados.length - 1].titulo + "'.");
+            break;
+        }
+    }
 }
 
 function devolverLibro(id) {
+    for (var i = 0; i < reservados.length; i++) {
+        if (reservados[i].id === id) {
+            libros.push(reservados[i]);
+            reservados.splice(i, 1);
+            mostrarLibrosDisponibles();
+            mostrarLibrosReservados();
+            mostrarNotificacion("Has devuelto el libro '" + libros[libros.length - 1].titulo + "'.");
+            break;
+        }
+    }
 }
 
 function mostrarNotificacion(mensaje) {
