@@ -3,7 +3,7 @@ Villacrés, Miranda
 
 * Explicacion HTML
 
-<div id="notificaciones"></div>: Crear apartado para notificaciones con un id específico.
+// <div id="notificaciones"></div>: Crear apartado para notificaciones con un id específico.
 
 <section> : Crear sección para buscar libros.
   
