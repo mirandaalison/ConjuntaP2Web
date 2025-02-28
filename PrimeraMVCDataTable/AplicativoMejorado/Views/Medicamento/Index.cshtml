@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="mb-4 text-center">Medicamento</h1>
+
+<fieldset class="border p-4 rounded shadow-sm">
+    <legend class="w-auto px-3">Agregar Medicamento</legend>
+
+    <form id="frmGuardarSucursal" method="post" class="row g-3">
+        <div class="col-md-6">
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="nombre">
+        </div>
+        <div class="col-md-6">
+            <label for="inputlaboratorio" class="form-label">Laboratorio</label>
+            <input type="text" class="form-control" name="laboratorio" id="laboratorio" placeholder="laboratorio">
+        </div>
+        <div class="col-md-6">
+            <label for="inputTipoMedicamento" class="form-label">Tipo Medicamento</label>
+            <input type="text" class="form-control" name="tipoMedicamento" id="tipoMedicamento" placeholder="tipoMedicamento">
+        </div>
+
+        <div class="col-12 text-end mt-3">
+            <button type="button" class="btn btn-primary me-2" onclick="GuardarMedicamento()">
+                <i class="bi bi-search"></i> Agregar
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="LimpiarMedicamento()">
+                <i class="bi bi-eraser"></i> Limpiar
+            </button>
+        </div>
+    </form>
+</fieldset>
+
+<fieldset class="border p-4 rounded shadow-sm">
+    <legend class="w-auto px-3">Búsqueda de Medicamento</legend>
+
+    <form id="frmBusqueda" method="post" class="row g-3">
+        <div class="col-md-6">
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="inputNombre" placeholder="nombre">
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputLaboratorio" class="form-label">Laboratorio</label>
+            <input type="text" class="form-control" name="laboratorio" id="inputLaboratorio" placeholder="laboratorio">
+        </div>
+
+        <div class="col-12">
+            <label for="inputTipoMedicamento" class="form-label">Tipo Medicamento</label>
+            <input type="text" class="form-control" id="inputTipoMedicamento" name="tipoMedicamento" placeholder="tipo medicamento">
+        </div>
+
+        <div class="col-12 text-end mt-3">
+            <button type="button" class="btn btn-primary me-2" onclick="BuscarMedicamento()">
+                <i class="bi bi-search"></i> Buscar
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="LimpiarMedicamento()">
+                <i class="bi bi-eraser"></i> Limpiar
+            </button>
+        </div>
+    </form>
+</fieldset>
+
+<div id="divTable" class="mt-4">
+</div>
+
+<script src="~/js/generic.js"></script>
+<script src="~/js/medicamento.js"></script>

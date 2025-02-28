@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AplicativoMejorado.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navegador.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Primero jQuery (necesario para DataTables) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Después DataTables -->
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <link rel="stylesheet" href="/DataTables/datatables.css" />
+    <script src="/DataTables/datatables.js"></script>
+
+    
+
+    <style>
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; 
+        }
+
+        .content-wrapper {
+            display: flex;
+            height: 100vh;
+        }
+
+        .vertical-menu-wrapper {
+            background-color: #333;
+            overflow: hidden; 
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .content {
+            flex: 1; 
+            overflow-y: auto; 
+            height: 100vh;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+	<nav class="vertical-menu-wrapper">
+		<link href="c:\users\user\desktop\4to\web\parcial 1\eliminar si\primeramvc\aplicativomejorado\views\shared\_layout.cshtml.css" rel="stylesheet" />
+		<a href="c:\users\user\desktop\4to\web\parcial 1\eliminar si\primeramvc\aplicativomejorado\views\shared\_layout.cshtml">c:\users\user\desktop\4to\web\parcial 1\eliminar si\primeramvc\aplicativomejorado\views\shared\_layout.cshtml</a>
+        <div class="vertical-menu-logo">
+            <div>BDFarmacia</div>
+            <span class="open-menu-btn"><hr><hr><hr></span>
+        </div>
+        <ul class="vertical-menu">
+
+            <li> <a class="nav-link text-white" asp-area="" asp-controller="TipoMedicamento" asp-action="Index">TipoMedicamento</a> </li>
+            <li> <a class="nav-link text-white" asp-area="" asp-controller="Sucursal" asp-action="Index">Sucursal</a> </li>
+            <li> <a class="nav-link text-white" asp-area="" asp-controller="Laboratorio" asp-action="Index">Laboratorio</a> </li>
+            <li> <a class="nav-link text-white" asp-area="" asp-controller="Medicamento" asp-action="Index">Medicamento</a> </li>
+            <hr/>
+        </ul>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="hdfOculto" value="@Url.Content("~")" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+                $('.open-menu-btn').on('click', function(){
+          if($('body').hasClass('closed-menu')){
+            $('body').removeClass('closed-menu');
+          }else  $('body').addClass('closed-menu');
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
